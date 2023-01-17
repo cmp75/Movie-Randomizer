@@ -1,68 +1,32 @@
 body {
-  font-family: 'Fira Sans', sans-serif;
-  background-color: black;
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: 'Sedgwick Ave', cursive; 
 }
-.header {
-  text-decoration-color: black;
-  background-color: red;
-  font-size: 60px;
-  text-align: center;
-  text-shadow: black 2px 2px 5px;
-  border-bottom: 5px solid black;
-  padding: 20px;
-  border-radius: 10px;
+.card {
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10%;
 }
-.navbar {
-  text-align: center;
-  background-color: black;
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: #DC143C;
+  border-bottom: 10px solid black;
+  font-size: xx-large;
   
 }
-.btn{
-  background-color: red;
-  color: black;
-  font-size: 30px;
-  font-weight: 200;
-  margin: 10px;
-  padding: 20px;
-  border: none;
-  border-radius: 40px;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-  text-transform: uppercase;
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-
-.btn {
-  color: red !important;
-  text-transform: uppercase;
-  background: black;
-  padding: 20px;
-  border: 4px solid red !important;
-  border-radius: 6px;
-  display: inline-block;
-  transition: all 0.3s ease 0s;
-  }
-  .btn:hover {
-  color:red !important;
-  border-radius: 50px;
-  border-color: red !important;
-  transition: all 0.3s ease 0s;
-  }
-
-
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
+li {
+  display: inline;
 }
+
 
 
 
@@ -181,5 +145,6 @@ h6 {
   font-size: 1.25rem;
   line-height: 1.5;
 }
+
 
 
