@@ -17,7 +17,7 @@ var poster
 var buttonEl = document.getElementById('dropdown-menu3')
 var movieinfoEl = document.getElementById('movie-info')
 
-var getMovies = function (user) {
+var getMovies = function () {
 fetch(getMoviesUrl)
 .then(response => response.json())
 .then(response => {
@@ -37,10 +37,25 @@ fetch(getMoviesUrl)
   .catch(err => console.error(err));
   return;
 }
-
-
-
- var searchMovies = function (user) {
+//keep this for final code
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+//saves the search history to the history dropdown menu
+var select = document.getElementById("search-history");
+select.innerHTML = '';
+for (var i = 0; i < searchHistory.length; i++) {
+  var searchTitle = searchHistory[i];
+  var option = document.createElement("option");
+  option.text = searchTitle;
+  option.value = searchTitle;
+  select.appendChild(option);
+}
+//final code
+//final code
+function saveSearchHistory() {
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+}
+//final code
+ var searchMovies = function () {
   searchMoviesUrl = "https://api.themoviedb.org/3/movie/" + movieIds[randomizedMovie] + "?api_key=d927d53ae21824c257d2521cfee31add&language=en-US"
 
   fetch(searchMoviesUrl)
@@ -55,7 +70,26 @@ fetch(getMoviesUrl)
     vote_average = movieData[0].vote_average;
     poster_path = movieData[0].poster_path;
 
+
     poster = "https://image.tmdb.org/t/p/original" + poster_path;
+
+    searchHistory.push(title);
+    if (searchHistory.length > 10) {
+      searchHistory.shift();
+    }
+    saveSearchHistory();
+
+    //saves the search history to the history dropdown menu
+    var select = document.getElementById("search-history");
+    select.innerHTML = '';
+    for (var i = 0; i < searchHistory.length; i++) {
+      var searchTitle = searchHistory[i];
+      var option = document.createElement("option");
+      option.text = searchTitle;
+      option.value = searchTitle;
+      select.appendChild(option);
+    }
+
     showMovies(poster, title, vote_average,overview)
       console.log(poster)
       console.log(title)
@@ -65,7 +99,7 @@ fetch(getMoviesUrl)
   .catch(err => console.error(err));
   return;  
 }
-
+//final code
 function showMovies(poster, title, vote_average,overview) {
 console.log('test')
     movieinfoEl.textContent = '';
@@ -73,18 +107,35 @@ console.log('test')
     movieEl.classList.add('movie');
     movieEl.innerHTML = `
     <img src=${poster} alt=${title}> </img>
-    
+
+    <div class="movie-data">
+      <h3>Title: ${title}</h3>
+      <h3>Review: <span class="${getColor(vote_average)}">${vote_average}</span>
+      </h3>
+    </div>
+
+    <div class="overview">
+
+      <h3>Overview: ${overview}</h3>
+      
+    </div>
    `
    
-  movieinfoEl.append(movieEl)
+  movieinfoEl.appendChild(movieEl)
   
-  // if(movieEl == 1) {
-  //   movieEl.classList.remove('movie')
-  // }
-  
-    
 
+}
+//final code
 
+function getColor(vote) {
+  if(vote >= 8){
+    return'green'
+  }else if(vote >= 5){
+    return'orange'
+  }else{
+    return'red'
+  }
 }
 
 buttonEl.addEventListener('click', getMovies)
+//final code

@@ -1,21 +1,28 @@
+
 body {
   font-family: 'Sedgwick Ave', cursive; 
+  margin: 0;
+  padding: 0;
 }
 
 .card {
   flex-direction: column;
-  margin-top: 5%;
+  margin-top: 1%;
   margin-left: 25%;
   margin-right: 25%;
-  margin-bottom: 10%;
+  margin-bottom: 1%;
 }
 
 .moviecard{
- height: 300px;
- width: 500px;
- font-weight: bold;
- display: block;
- padding-bottom: 15px;
+  height: 200px;
+  width: 350px;
+  font-weight: bold;
+  display: block;
+  padding-bottom: 15px;
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 36%;
 }
 
 
@@ -47,6 +54,47 @@ footer {
   height: 25px;
   min-width: 100vw;
   padding-top: 5px;
+  display: block;
 }
 
+main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.movie-info img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:  0.5rem 1rem 1rem;
+}
+
+.movie-data h3{
+  margin-top: 0;
+}
+
+.movie-data h3 {
+  font-size: 20px;
+}
+
+
+.movie-data span.green{
+  color: lightgreen;
+}
+
+.movie-data span.orange{
+  color: orange;
+}
+
+.movie-data span.red{
+  color: red;
+}
+
+.overview{
+  margin-bottom: 25px;
+}
 
