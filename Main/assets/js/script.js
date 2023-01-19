@@ -1,7 +1,6 @@
 var baseUrl = "https://api.themoviedb.org/3/";
 var apiKey = "d927d53ae21824c257d2521cfee31add";
 var movieIds = []
-var movieData =[]
 
 var getMoviesUrl = "https://api.themoviedb.org/3/movie/popular?api_key=d927d53ae21824c257d2521cfee31add&language=en-US";
 var getMoviebyID = "https://api.themoviedb.org/3/movie/"
@@ -15,6 +14,10 @@ var overview
 var vote_average
 var poster_path
 var poster
+
+var buttonEl = document.getElementById('dropdown-menu3')
+var movieinfoEl = document.getElementById('movie-info')
+
 
 var getMovies = function (user) {
 fetch(getMoviesUrl)
@@ -37,7 +40,7 @@ fetch(getMoviesUrl)
   return;
 }
 
-getMovies()
+
 
 
  var searchMovies = function (user) {
@@ -45,16 +48,19 @@ getMovies()
 
   fetch(searchMoviesUrl)
   .then(response => response.json())
-  .then(response => {
-    console.log(response)
-    movieData.push(response)
-    console.log(movieData)
+
+  .then(response => { 
+    var movieData =[];
+    console.log(response);
+    movieData.push(response);
+    console.log(movieData);
     title = movieData[0].title;
     overview = movieData[0].overview;
     vote_average = movieData[0].vote_average;
     poster_path = movieData[0].poster_path;
 
     poster = "https://image.tmdb.org/t/p/original" + poster_path;
+    showMovies(poster, title, vote_average,overview)
       console.log(poster)
       console.log(title)
       console.log(vote_average)
@@ -64,9 +70,30 @@ getMovies()
   return;  
 }
 
-var showMovies = function {
+
+function showMovies(poster, title, vote_average,overview) {
+console.log('test')
+    movieinfoEl.textContent = '';
+    movieEl = document.createElement('div');
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = `
+    <img src=${poster} alt=${title}> </img>
+    
+   `
+   
+  movieinfoEl.append(movieEl)
   
+  // if(movieEl == 1) {
+  //   movieEl.classList.remove('movie')
+  // }
+  
+    
+
 
 }
 
-//MovieEl.InnerHTML = <Img Src="${poster}" Alt="${title}"/>
+buttonEl.addEventListener('click', getMovies)
+
+
+
+
