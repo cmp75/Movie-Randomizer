@@ -14,8 +14,10 @@ var overview
 var vote_average
 var poster_path
 var poster
+
 var buttonEl = document.getElementById('dropdown-menu3')
 var movieinfoEl = document.getElementById('movie-info')
+
 
 var getMovies = function (user) {
 fetch(getMoviesUrl)
@@ -40,11 +42,13 @@ fetch(getMoviesUrl)
 
 
 
+
  var searchMovies = function (user) {
   searchMoviesUrl = "https://api.themoviedb.org/3/movie/" + movieIds[randomizedMovie] + "?api_key=d927d53ae21824c257d2521cfee31add&language=en-US"
 
   fetch(searchMoviesUrl)
   .then(response => response.json())
+
   .then(response => { 
     var movieData =[];
     console.log(response);
@@ -65,6 +69,7 @@ fetch(getMoviesUrl)
   .catch(err => console.error(err));
   return;  
 }
+
 
 function showMovies(poster, title, vote_average,overview) {
 console.log('test')
@@ -88,3 +93,7 @@ console.log('test')
 }
 
 buttonEl.addEventListener('click', getMovies)
+
+
+
+
