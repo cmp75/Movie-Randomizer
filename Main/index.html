@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie Randomizer!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/jass.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a594edd944.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Movie Randomizer!</title>
+  </head>
 
-<body>
+
+  <body>
+    <!--Header -->
+ <header class="header"><i class="fa-solid fa-film"></i>Movie Randomizer</header>
 
 
+      <!--History Drop Down-->
+      <li>
+        <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button is-danger is-outlined is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>History</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+              <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    </ul>
+  </header>
+  </nav>
+  
+  
+  
+  <!--Card that welcomes users on the website and gives them the option to click randomize to select a rendom movie -->
 
 
+    <div class="card landingCard" role="button">
+      <div class="card-content ">
+        <p class="subtitle is-3 has-text-centered ">Are you ready for a movie night?</p>        
+        <div class="boc has-text-centered">
+          <button class="button is-large has-text-centered is-outlined is-link  is-danger contBtn" id="dropdown-menu3">Randomize
+          </button>
+        </div>
+      </div>
+    </div>
 
+    <div id="movie-info" class="moviecard"></div>
 
-  <script src="./assets/js/script.js"></script>
-</body>
-
+<!--Footer with team 7 dispayin -->
+    <footer class="has-text-centered" style="display:block;">© Team7</footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

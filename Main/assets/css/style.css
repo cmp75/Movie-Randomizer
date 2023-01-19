@@ -1,13 +1,52 @@
 body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Sedgwick Ave', cursive; 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
+.card {
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10%;
 }
+
+.moviecard{
+ height: 300px;
+ width: 500px;
+ font-weight: bold;
+ display: block;
+ padding-bottom: 15px;
+}
+
+
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: #DC143C;
+  border-bottom: 10px solid black;
+  font-size: xx-large;
+  
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+footer {
+  border-top: 2px solid #DC143C;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  min-width: 100vw;
+  padding-top: 5px;
+}
+
+
