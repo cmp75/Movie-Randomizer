@@ -14,6 +14,7 @@ var overview
 var vote_average
 var poster_path
 var poster
+
 var buttonEl = document.getElementById('dropdown-menu3')
 var movieinfoEl = document.getElementById('movie-info')
 
@@ -60,6 +61,7 @@ function saveSearchHistory() {
 
   fetch(searchMoviesUrl)
   .then(response => response.json())
+
   .then(response => { 
     var movieData =[];
     console.log(response);
