@@ -10,6 +10,15 @@ body {
   margin-bottom: 10%;
 }
 
+.moviecard{
+ height: 300px;
+ width: 500px;
+ font-weight: bold;
+ display: block;
+ padding-bottom: 15px;
+}
+
+
 .header{
   height: 50px;
   width: 100%;
